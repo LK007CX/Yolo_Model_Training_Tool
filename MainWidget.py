@@ -35,7 +35,7 @@ class Winform(QWidget):
         
         self.initUi()
         
-        self.setWindowTitle("模型训练工具")
+        self.setWindowTitle("Yolo V4 模型训练工具")
         self.setWindowIcon(QIcon("image/darknet.png"))
 
     def initUi(self):
@@ -51,7 +51,7 @@ class Winform(QWidget):
                                         QListWidget::item:selected {
                                         background-color: SkyBlue;
                                         color: black;
-                                        border-left: 2px solid rgb(9, 187, 7);
+                                        border-left: 1px solid rgb(9, 187, 7);
                                         }
                                         
                                         """)
@@ -114,7 +114,7 @@ class Winform(QWidget):
         anchorItem.setTextAlignment(Qt.AlignCenter)
 
         taskSettingsWidget = TaskSettingsWidget()
-        taskSettingsWidget.setContentsMargins(200, 200, 200, 200)
+        taskSettingsWidget.setContentsMargins(200, 200, 200, 0)
         self.stackedWidget.addWidget(taskSettingsWidget)
 
     

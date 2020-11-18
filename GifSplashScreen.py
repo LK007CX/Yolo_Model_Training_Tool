@@ -13,7 +13,7 @@ class GifSplashScreen(QSplashScreen):
 
     def __init__(self, *args, **kwargs):
         super(GifSplashScreen, self).__init__(*args, **kwargs)
-        self.movie = QMovie('Data/splash.gif')
+        self.movie = QMovie('image/splash.gif')
         self.movie.frameChanged.connect(self.onFrameChanged)
         self.movie.start()
 

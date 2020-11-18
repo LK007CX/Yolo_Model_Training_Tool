@@ -10,12 +10,12 @@ from PyQt5.QtWidgets import *
 
 
 """
-1.任务设置页面
+1.导入标注
 """
 class TaggingWidget(QWidget):
     def __init__(self, *args, **kwargs):
         super(TaggingWidget, self).__init__(*args, **kwargs)
-        
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

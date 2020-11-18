@@ -57,6 +57,11 @@ class TaskSettingsWidget(QWidget):
         classNumberWidget = ClassNumberWidget("image/number.png", "训练类别数量", classNumberItem, self.listWidget)
         self.listWidget.setItemWidget(classNumberItem, classNumberWidget)
 
+        classAddItem = QListWidgetItem(self.listWidget)
+        classAddItem.setSizeHint(QSize(200, 100))
+        classAddWidget = ClassAddWidget("image/label.png", "添加训练标签", classAddItem, self.listWidget)
+        self.listWidget.setItemWidget(classAddItem, classAddWidget)
+
 
 
 
@@ -140,7 +145,6 @@ class ClassNumberWidget(QWidget):
         self.classNumberSlider = QSlider(Qt.Horizontal)
         self.classNumberLabel = QLabel("2")
         
-
         layout = QHBoxLayout()
         layout.addWidget(self.iconLabel)
         layout.addWidget(self.titleLabel)
@@ -163,6 +167,39 @@ class ClassNumberWidget(QWidget):
     def valueChange(self, value):
         self.classNumberLabel.setText(str(value))
 
+
+class ClassAddWidget(QWidget):
+    def __init__(self, icon, title, item, *args, **kwargs):
+        super(ClassAddWidget, self).__init__(*args, **kwargs)
+
+        self._item = item
+        self.icon = icon
+        self.title = title
+
+        self.iconLabel = QLabel()
+        self.titleLabel = QLabel(self.title)
+        self.classAddLineEdit = QLineEdit()
+        self.classAddPushButton = QPushButton("添加类别")
+        self.classPanel = QWidget()
+        self.classPanel.resize(QSize(400, 100))
+        
+        hBoxlayout = QHBoxLayout()
+        hBoxlayout.addWidget(self.iconLabel)
+        hBoxlayout.addWidget(self.titleLabel)
+        hBoxlayout.addWidget(self.classAddLineEdit)
+        hBoxlayout.addWidget(self.classAddPushButton)
+        vBoxlayout = QVBoxLayout()
+        vBoxlayout.addLayout(hBoxlayout)
+        vBoxlayout.addWidget(self.classPanel)
+        self.setLayout(vBoxlayout)
+        self.initUI()
+    
+    def initUI(self):
+        self.iconLabel.setScaledContents(True)
+        self.iconLabel.setPixmap(QPixmap(self.icon))
+        self.iconLabel.setMaximumSize(20, 20)
+
+       
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
