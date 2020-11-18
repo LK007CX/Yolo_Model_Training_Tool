@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import sys
 from random import randint
+
+import qdarkstyle
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-import qdarkstyle
+
 from CustomListWidget import CustomListWidget
 from TaskSettingsWidget import TaskSettingsWidget
-import sys
 
 
-
-
+"""
+主页面
+"""
 class Winform(QWidget):
     def __init__(self, *args, **kwargs):
         super(Winform, self).__init__(*args, **kwargs)
@@ -31,11 +34,9 @@ class Winform(QWidget):
         layout.addWidget(self.stackedWidget)
         
         self.initUi()
-
-        # self.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
         
         self.setWindowTitle("模型训练工具")
-        self.setWindowIcon(QIcon("Data/darknet.png"))
+        self.setWindowIcon(QIcon("image/darknet.png"))
 
     def initUi(self):
         self.listWidget.setFixedWidth(180)
@@ -56,6 +57,7 @@ class Winform(QWidget):
                                         """)
         self.stackedWidget.setStyleSheet("""QStackedWidget {
                                         background-color: white;
+                                        border-left: 2px solid rgb(0, 0, 0);
                                         }""")
         # 初始化界面
         self.listWidget.setIconSize(QSize(50, 50))
@@ -68,60 +70,51 @@ class Winform(QWidget):
         self.listWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         
-        item_start = QListWidgetItem(
-                QIcon('Data/home.png'), "1.任务设置", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_start.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_start.setTextAlignment(Qt.AlignCenter)
 
-        item_tagging = QListWidgetItem(
-                QIcon('Data/tagging.png'), "2.导入标注", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_tagging.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_tagging.setTextAlignment(Qt.AlignCenter)
+        # 1.任务设置
+        startItem = QListWidgetItem(
+                QIcon('image/home.png'), "1.任务设置", self.listWidget)
+        startItem.setSizeHint(QSize(16777215, 100))
+        startItem.setTextAlignment(Qt.AlignCenter)
+        
+        # 2.导入标注
+        taggingItem = QListWidgetItem(
+                QIcon('image/tagging.png'), "2.导入标注", self.listWidget)
+        taggingItem.setSizeHint(QSize(16777215, 100))
+        taggingItem.setTextAlignment(Qt.AlignCenter)
+        
+        # 3.修改配置
+        configItem = QListWidgetItem(
+                QIcon('image/setting.png'), "3.修改配置", self.listWidget)
+        configItem.setSizeHint(QSize(16777215, 100))
+        configItem.setTextAlignment(Qt.AlignCenter)
 
-        item_cfg = QListWidgetItem(
-                QIcon('Data/setting.png'), "3.修改配置", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_cfg.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_cfg.setTextAlignment(Qt.AlignCenter)
+        # 4.开始训练
+        trainItem = QListWidgetItem(
+                QIcon('image/train.png'), "4.开始训练", self.listWidget)
+        trainItem.setSizeHint(QSize(16777215, 100))
+        trainItem.setTextAlignment(Qt.AlignCenter)
 
-
-        item_train = QListWidgetItem(
-                QIcon('Data/train.png'), "4.开始训练", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_train.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_train.setTextAlignment(Qt.AlignCenter)
-
-
-        item_test = QListWidgetItem(
-                QIcon('Data/test.png'), "5.测试模型", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_test.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_test.setTextAlignment(Qt.AlignCenter)
-
-        item_map = QListWidgetItem(
-                QIcon('Data/性能统计.png'), "6.性能统计", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_map.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_map.setTextAlignment(Qt.AlignCenter)
-
-        item_anchor = QListWidgetItem(
-                QIcon('Data/anchor.png'), "7.聚类分析", self.listWidget)
-        # 设置item的默认宽高(这里只有高度比较有用)
-        item_anchor.setSizeHint(QSize(16777215, 100))
-        # 文字居中
-        item_anchor.setTextAlignment(Qt.AlignCenter)
+        # 5.测试模型
+        testItem = QListWidgetItem(
+                QIcon('image/test.png'), "5.测试模型", self.listWidget)
+        testItem.setSizeHint(QSize(16777215, 100))
+        testItem.setTextAlignment(Qt.AlignCenter)
+        
+        # 6.性能统计
+        mapItem = QListWidgetItem(
+                QIcon('image/性能统计.png'), "6.性能统计", self.listWidget)
+        mapItem.setSizeHint(QSize(16777215, 100))
+        mapItem.setTextAlignment(Qt.AlignCenter)
+        
+        # 7.聚类分析
+        anchorItem = QListWidgetItem(
+                QIcon('image/anchor.png'), "7.聚类分析", self.listWidget)
+        anchorItem.setSizeHint(QSize(16777215, 100))
+        anchorItem.setTextAlignment(Qt.AlignCenter)
 
         taskSettingsWidget = TaskSettingsWidget()
-        taskSettingsWidget.setContentsMargins(300, 200, 300, 350)
-        #taskSettingsWidget.setStyleSheet("""margin: 50px;""")
+        taskSettingsWidget.setContentsMargins(200, 200, 200, 200)
         self.stackedWidget.addWidget(taskSettingsWidget)
 
     

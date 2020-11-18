@@ -6,6 +6,9 @@ from PyQt5.QtGui import QMovie
 from PyQt5.QtWidgets import QApplication, QSplashScreen, QWidget, QLabel
 
 
+"""
+启动SplashScreen
+"""
 class GifSplashScreen(QSplashScreen):
 
     def __init__(self, *args, **kwargs):

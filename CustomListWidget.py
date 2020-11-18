@@ -16,6 +16,11 @@ QWidget {
 }
 """
 
+
+"""
+尝试自定义QListWidgetItem
+失败
+"""
 class CustomListWidget(QWidget):
 
     itemDeleted = pyqtSignal(QListWidgetItem)
