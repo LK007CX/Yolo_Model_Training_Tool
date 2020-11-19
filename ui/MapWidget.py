@@ -12,16 +12,16 @@ from PyQt5.QtWidgets import *
 """
 4.
 """
-class TrainWidget(QWidget):
+class MapWidget(QWidget):
     def __init__(self, *args, **kwargs):
-        super(TrainWidget, self).__init__(*args, **kwargs)
+        super(MapWidget, self).__init__(*args, **kwargs)
         
-        self.label = QLabel("Train", self)
+        self.label = QLabel("Map", self)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    win = TaggingWidget()
+    win = MapWidget()
     win.show()
     sys.exit(app.exec_())
 

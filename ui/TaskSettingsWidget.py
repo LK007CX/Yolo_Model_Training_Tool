@@ -66,6 +66,8 @@ class TaskSettingsWidget(QWidget):
 '''
 训练任务设置
 '''
+
+
 class ItemWidget(QWidget):
     def __init__(self, icon, title, is_open_file, item, *args, **kwargs):
         super(ItemWidget, self).__init__(*args, **kwargs)
@@ -100,11 +102,12 @@ class ItemWidget(QWidget):
         self.operationToolButton.setText("...")
         self.operationToolButton.setFixedSize(25, 25)
 
-       
 
 '''
 模型种类选择
 '''
+
+
 class ModelCateoryWidget(QWidget):
     def __init__(self, icon, title, item, *args, **kwargs):
         super(ModelCateoryWidget, self).__init__(*args, **kwargs)
@@ -133,10 +136,11 @@ class ModelCateoryWidget(QWidget):
         self.modelCategoryComboBox.addItem("Yolo V4")
 
 
-
 '''
 训练类别数量
 '''
+
+
 class ClassNumberWidget(QWidget):
     def __init__(self, icon, title, item, *args, **kwargs):
         super(ClassNumberWidget, self).__init__(*args, **kwargs)
@@ -176,6 +180,8 @@ class ClassNumberWidget(QWidget):
 '''
 训练类别添加
 '''
+
+
 class ClassAddWidget(QWidget):
     def __init__(self, icon, title, item, *args, **kwargs):
         super(ClassAddWidget, self).__init__(*args, **kwargs)
@@ -203,8 +209,6 @@ class ClassAddWidget(QWidget):
         self.setLayout(vBoxlayout)
         self.initUI()
 
-        
-    
     def initUI(self):
         self.iconLabel.setScaledContents(True)
         self.iconLabel.setPixmap(QPixmap(self.icon))
@@ -212,7 +216,6 @@ class ClassAddWidget(QWidget):
         self.classAddPushButton.clicked.connect(self.addClassItem)
         self.classAllDeletePushButton.clicked.connect(self.doClearItem)
 
-    
     def addClassItem(self):
         text = str(self.classAddLineEdit.text()).strip()
         if text == '':
@@ -224,7 +227,6 @@ class ClassAddWidget(QWidget):
         widget.itemDeleted.connect(self.doDeleteItem)
         self.classListWidget.setItemWidget(item, widget)
 
-    
     def doClearItem(self):
         # 清空所有Item
         for _ in range(self.classListWidget.count()):
@@ -245,9 +247,10 @@ class ClassAddWidget(QWidget):
         self.classListWidget.removeItemWidget(item)
         del item
     
-    def check():
+    def check(self):
         # 检查是否有重复项，是否有中文标签
         pass
+
 
 class ClassItemWidget(QWidget):
 
@@ -275,7 +278,6 @@ class ClassItemWidget(QWidget):
     def sizeHint(self):
         # 决定item的高度
         return QSize(200, 40)
-
 
 
 if __name__ == "__main__":

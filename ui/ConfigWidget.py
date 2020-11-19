@@ -10,18 +10,20 @@ from PyQt5.QtWidgets import *
 
 
 """
-4.
+3.
 """
-class MapWidget(QWidget):
+
+
+class ConfigWidget(QWidget):
     def __init__(self, *args, **kwargs):
-        super(MapWidget, self).__init__(*args, **kwargs)
+        super(ConfigWidget, self).__init__(*args, **kwargs)
         
-        self.label = QLabel("Map", self)
+        self.label = QLabel("Config", self)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    win = TaggingWidget()
+    win = ConfigWidget()
     win.show()
     sys.exit(app.exec_())
 

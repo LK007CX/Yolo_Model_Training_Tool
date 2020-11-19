@@ -17,10 +17,15 @@ from TestWidget import TestWidget
 from MapWidget import MapWidget
 from AnchorWidget import AnchorWidget
 
+sys.path.append("..")
 
 """
 主页面
 """
+import os
+
+print(os.getcwd())
+
 class Winform(QWidget):
     def __init__(self, *args, **kwargs):
         super(Winform, self).__init__(*args, **kwargs)
@@ -145,8 +150,6 @@ class Winform(QWidget):
         anchorWidget = AnchorWidget()
         anchorWidget.setContentsMargins(50, 50, 50, 50)
         self.stackedWidget.addWidget(anchorWidget)
-
-    
 
 
 if __name__ == "__main__":

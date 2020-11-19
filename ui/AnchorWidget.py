@@ -10,18 +10,20 @@ from PyQt5.QtWidgets import *
 
 
 """
-3.
+4.
 """
-class ConfigWidget(QWidget):
+
+
+class AnchorWidget(QWidget):
     def __init__(self, *args, **kwargs):
-        super(ConfigWidget, self).__init__(*args, **kwargs)
+        super(AnchorWidget, self).__init__(*args, **kwargs)
         
-        self.label = QLabel("Config", self)
+        self.label = QLabel("Anchor", self)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    win = TaggingWidget()
+    win = AnchorWidget()
     win.show()
     sys.exit(app.exec_())
 

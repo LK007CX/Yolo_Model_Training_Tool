@@ -12,16 +12,18 @@ from PyQt5.QtWidgets import *
 """
 4.
 """
-class AnchorWidget(QWidget):
+
+
+class TestWidget(QWidget):
     def __init__(self, *args, **kwargs):
-        super(AnchorWidget, self).__init__(*args, **kwargs)
+        super(TestWidget, self).__init__(*args, **kwargs)
         
-        self.label = QLabel("Anchor", self)
+        self.label = QLabel("Test", self)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    win = TaggingWidget()
+    win = TestWidget()
     win.show()
     sys.exit(app.exec_())
 

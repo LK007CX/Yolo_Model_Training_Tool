@@ -10,18 +10,20 @@ from PyQt5.QtWidgets import *
 
 
 """
-2.导入标注
+4.
 """
-class TaggingWidget(QWidget):
+
+
+class TrainWidget(QWidget):
     def __init__(self, *args, **kwargs):
-        super(TaggingWidget, self).__init__(*args, **kwargs)
+        super(TrainWidget, self).__init__(*args, **kwargs)
         
-        self.label = QLabel("Tagging", self)
+        self.label = QLabel("Train", self)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    win = TaggingWidget()
+    win = TrainWidget()
     win.show()
     sys.exit(app.exec_())
 

@@ -21,6 +21,8 @@ QWidget {
 尝试自定义QListWidgetItem
 失败
 """
+
+
 class CustomListWidget(QWidget):
 
     itemDeleted = pyqtSignal(QListWidgetItem)
@@ -30,23 +32,16 @@ class CustomListWidget(QWidget):
         self.name = name
         self.icon = icon
         self._item = item # 保留list item的对象引用
-        
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         self.label_title = QLabel(name, self)
-        #self.label_title.setScaledContents(True)
-        #self.label_title.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
         self.label_title.setStyleSheet("""font-size: 20px;font-family: MicroSoft YaHei""")
         self.label_icon = QLabel(self)
-        #self.label_icon.setScaledContents(True)
         self.label_icon.setPixmap(QPixmap(self.icon))
-
         layout.addWidget(self.label_title, 0, Qt.AlignCenter)
         layout.addWidget(self.label_icon, 0, Qt.AlignCenter)
-
         self.setLayout(layout)
         self.resize(QSize(150, 150))
-        #self.setStyleSheet(Stylesheet)
 
     def doDeleteItem(self):
         self.itemDeleted.emit(self._item)
