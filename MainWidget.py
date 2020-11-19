@@ -8,8 +8,14 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from CustomListWidget import CustomListWidget
+# from CustomListWidget import CustomListWidget
 from TaskSettingsWidget import TaskSettingsWidget
+from TaggingWidget import TaggingWidget
+from ConfigWidget import ConfigWidget
+from TrainWidget import TrainWidget
+from TestWidget import TestWidget
+from MapWidget import MapWidget
+from AnchorWidget import AnchorWidget
 
 
 """
@@ -39,7 +45,6 @@ class Winform(QWidget):
         self.setWindowIcon(QIcon("image/darknet.png"))
 
     def initUi(self):
-        self.listWidget.setFixedWidth(180)
         self.listWidget.setStyleSheet("""QListWidget {
                                         min-width: 180px;
                                         max-width: 180px;
@@ -51,7 +56,7 @@ class Winform(QWidget):
                                         QListWidget::item:selected {
                                         background-color: SkyBlue;
                                         color: black;
-                                        border-left: 1px solid rgb(9, 187, 7);
+                                        border-left: 3px solid rgb(9, 187, 7);
                                         }
                                         
                                         """)
@@ -114,8 +119,32 @@ class Winform(QWidget):
         anchorItem.setTextAlignment(Qt.AlignCenter)
 
         taskSettingsWidget = TaskSettingsWidget()
-        taskSettingsWidget.setContentsMargins(200, 200, 200, 0)
+        taskSettingsWidget.setContentsMargins(200, 50, 200, 50)
         self.stackedWidget.addWidget(taskSettingsWidget)
+
+        taggingWidget = TaggingWidget()
+        taggingWidget.setContentsMargins(50, 50, 50, 50)
+        self.stackedWidget.addWidget(taggingWidget)
+
+        configWidget = ConfigWidget()
+        configWidget.setContentsMargins(50, 50, 50, 50)
+        self.stackedWidget.addWidget(configWidget)
+
+        trainWidget = TrainWidget()
+        trainWidget.setContentsMargins(50, 50, 50, 50)
+        self.stackedWidget.addWidget(trainWidget)
+
+        testWidget = TestWidget()
+        testWidget.setContentsMargins(50, 50, 50, 50)
+        self.stackedWidget.addWidget(testWidget)
+
+        mapWidget = MapWidget()
+        mapWidget.setContentsMargins(50, 50, 50, 50)
+        self.stackedWidget.addWidget(mapWidget)
+
+        anchorWidget = AnchorWidget()
+        anchorWidget.setContentsMargins(50, 50, 50, 50)
+        self.stackedWidget.addWidget(anchorWidget)
 
     
 

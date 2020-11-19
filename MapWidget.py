@@ -10,13 +10,13 @@ from PyQt5.QtWidgets import *
 
 
 """
-2.导入标注
+4.
 """
-class TaggingWidget(QWidget):
+class MapWidget(QWidget):
     def __init__(self, *args, **kwargs):
-        super(TaggingWidget, self).__init__(*args, **kwargs)
+        super(MapWidget, self).__init__(*args, **kwargs)
         
-        self.label = QLabel("Tagging", self)
+        self.label = QLabel("Map", self)
 
 
 if __name__ == "__main__":
