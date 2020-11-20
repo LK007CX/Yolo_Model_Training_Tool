@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys, os
+import sys, os, cv2, datetime, random
 from random import randint
 
 import qdarkstyle
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
+import xml.etree.ElementTree as ET
 
 
 """
@@ -40,8 +42,8 @@ class TaggingWidget(QWidget):
 
         bottomLeftLayout = QHBoxLayout()
         bottomLeftLayout.addStretch(1)
-        bottomLeftLayout.addWidget(self.prevPushButton)
-        bottomLeftLayout.addWidget(self.nextPushButton)
+        # bottomLeftLayout.addWidget(self.prevPushButton)
+        # bottomLeftLayout.addWidget(self.nextPushButton)
         bottomLeftLayout.addStretch(1)
 
         leftLayout = QVBoxLayout()
@@ -81,6 +83,7 @@ class TaggingWidget(QWidget):
         self.xmlListWidget.setMaximumWidth(300)
 
         self.imageListWidget.currentRowChanged.connect(self.xmlListWidget.setCurrentRow)
+        self.imageListWidget.currentRowChanged.connect(self.showDrawingImage)
         self.xmlListWidget.currentRowChanged.connect(self.imageListWidget.setCurrentRow)
 
 
@@ -90,6 +93,51 @@ class TaggingWidget(QWidget):
         self.imageChooseWidget.resetPushButton.clicked.connect(self.resetImagePath)
         self.xmlChooseWidget.resetPushButton.clicked.connect(self.resetXMLPath)
 
+
+    def showDrawingImage(self):
+        image_path = os.path.join(self.imagePath, self.imageListWidget.currentItem().text())
+        filename = os.path.splitext(image_path)[0] + '.xml'
+        print(filename)
+        xml_path = os.path.join(self.xmlPath, filename)
+        image = cv2.imread(image_path)
+        image = self.cvDrawBoxes(xml_path, image)
+        height, width, channel = image.shape  # 视频帧信息
+        bytesPerLine = 3 * width
+        qImg = QImage(image.data, width, height, bytesPerLine,
+                           QImage.Format_RGB888).rgbSwapped()
+        self.imageLabel.setPixmap(QPixmap.fromImage(qImg))
+
+
+    def cvDrawBoxes(self, xml_path, img):
+        tree = ET.parse(xml_path)
+        root = tree.getroot()
+        detections = []
+        for object in root.findall('object'):
+            temp_list = []
+            name = object.find('name').text
+            for coordinate in object.find('bndbox'):
+                temp_list.append(int(coordinate.text))
+            temp_list.append(name)
+            detections.append(temp_list)
+
+        for detection in detections:
+            xmin, ymin, xmax, ymax = detection[0], detection[1], detection[2], detection[3]
+            pt1 = (xmin, ymin)
+            pt2 = (xmax, ymax)
+            r, g, b = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+            cv2.rectangle(img, pt1, pt2, (r, g, b), 2)
+            cv2.putText(img, detection[4], (pt1[0], pt1[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, [r, g, b], 2)
+        return img
+
+    def getBoxes(self, image_name):
+        """
+        根据XML标注文件得到标注列表[x_min, y_min, x_max, y_max, cat_name]的列表
+        :param image_name:
+        :return:
+        """
+
+        # print(boxes)
+        return boxes
 
 
     def addImageToListWidget_test(self):
