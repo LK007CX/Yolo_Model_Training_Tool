@@ -31,6 +31,7 @@ class Winform(QWidget):
         super(Winform, self).__init__(*args, **kwargs)
 
         self.resize(1280, 720)
+        #self.setFixedSize(QSize(1280, 720))
         
         # 左侧列表
         self.listWidget = QListWidget(self, objectName="listWidget")
