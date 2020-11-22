@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b25cc93f-bdf0-4f1c-ad4c-4f85395fd185" name="Default Changelist" comment="" />
+    <list default="true" id="b25cc93f-bdf0-4f1c-ad4c-4f85395fd185" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Yolo_Model_Training_Tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Yolo_Model_Training_Tool.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/TaggingWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/TaggingWidget.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="723bab38-6211-4a10-8f5a-2378f9961cb3" />
   <component name="ProjectId" id="1kOni4cXXbdxTdrQEU06tAVfdXV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,7 +41,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/image" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -56,6 +64,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CustomListWidgetItem.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -77,6 +86,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/MainWidget.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -98,6 +108,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainWidget.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -119,6 +130,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/TaggingWidget.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -140,6 +152,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -159,6 +172,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -169,8 +183,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605580628528</updated>
+      <workItem from="1605874886268" duration="964000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -185,41 +203,57 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="348" key="GridCell.Tab.0.bottom" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1605875647685" />
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.0.center" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.0.center" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1605875647684" />
+    <state width="1493" height="265" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.0.left" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.0.left" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1605875647684" />
+    <state width="1493" height="265" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.0.right" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.0.right" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1605875647684" />
+    <state width="1493" height="265" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1605862424878">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1605875851238">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1605875851238" />
     <state width="1899" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605862424878" />
     <state x="568" y="198" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605580733596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="568" y="198" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605580733596" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Yolo_Model_Training_Tool$main.coverage" NAME="main Coverage Results" MODIFIED="1605875767294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Yolo_Model_Training_Tool$TaggingWidget.coverage" NAME="TaggingWidget Coverage Results" MODIFIED="1605875760107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
   </component>
 </project>

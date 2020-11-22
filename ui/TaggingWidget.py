@@ -129,17 +129,6 @@ class TaggingWidget(QWidget):
             cv2.putText(img, detection[4], (pt1[0], pt1[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, [r, g, b], 2)
         return img
 
-    def getBoxes(self, image_name):
-        """
-        根据XML标注文件得到标注列表[x_min, y_min, x_max, y_max, cat_name]的列表
-        :param image_name:
-        :return:
-        """
-
-        # print(boxes)
-        return boxes
-
-
     def addImageToListWidget_test(self):
         for i in range(50):
             item = QListWidgetItem(QIcon('image/image.png'), str(' 图 片 %s' % i), self.imageListWidget)
