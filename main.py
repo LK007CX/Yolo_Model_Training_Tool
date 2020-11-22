@@ -9,6 +9,7 @@ import sys
 sys.path.append('./ui')
 from ui.GifSplashScreen import GifSplashScreen
 from ui.MainWidget import Winform
+import qdarkstyle
 
 
 if __name__ == '__main__':
@@ -16,7 +17,6 @@ if __name__ == '__main__':
     import cgitb
 
     cgitb.enable(1, None, 5, '')
-
     app = QApplication(sys.argv)
     splash = GifSplashScreen()
     splash.show()

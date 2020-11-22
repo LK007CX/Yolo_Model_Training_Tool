@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys
+import sys, os
 from random import randint
 
 import qdarkstyle
@@ -25,7 +25,7 @@ class TaskSettingsWidget(QWidget):
         layout.addWidget(self.listWidget)
         layout.addWidget(self.nextStepPushButton, 0, Qt.AlignCenter)
         self.setLayout(layout)
-        
+
        
         self.initUI()
     
@@ -37,14 +37,15 @@ class TaskSettingsWidget(QWidget):
         self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
         # self.nextStepPushButton.setMaximumWidth(200)
+        self.nextStepPushButton.clicked.connect(self.nextStep)
         newItem = QListWidgetItem(self.listWidget)
         newItem.setSizeHint(QSize(200, 50))
-        newWidget = ItemWidget("image/new.png", "新建训练任务", 0, newItem, self.listWidget)
+        newWidget = ItemWidget("image/new.png", "新建训练任务", 0, newItem, self.listWidget, objectName='newWidget')
         self.listWidget.setItemWidget(newItem, newWidget)
 
         saveItem = QListWidgetItem(self.listWidget)
         saveItem.setSizeHint(QSize(200, 50))
-        saveWidget = ItemWidget("image/file.png", "设置保存路径", 1, saveItem, self.listWidget)
+        saveWidget = ItemWidget("image/file.png", "设置保存路径", 1, saveItem, self.listWidget, objectName='saveWidget')
         self.listWidget.setItemWidget(saveItem, saveWidget)
 
         modelCateoryItem = QListWidgetItem(self.listWidget)
@@ -54,13 +55,37 @@ class TaskSettingsWidget(QWidget):
 
         classNumberItem = QListWidgetItem(self.listWidget)
         classNumberItem.setSizeHint(QSize(200, 50))
-        classNumberWidget = ClassNumberWidget("image/number.png", "训练类别数量", classNumberItem, self.listWidget)
+        classNumberWidget = ClassNumberWidget("image/number.png", "训练类别数量", classNumberItem, self.listWidget,
+                                              objectName='classNumberWidget')
         self.listWidget.setItemWidget(classNumberItem, classNumberWidget)
 
         classAddItem = QListWidgetItem(self.listWidget)
         classAddItem.setSizeHint(QSize(200, 300))
         classAddWidget = ClassAddWidget("image/label.png", "添加训练标签", classAddItem, self.listWidget)
         self.listWidget.setItemWidget(classAddItem, classAddWidget)
+
+    def nextStep(self):
+        # check params
+        projectFolder = self.findChild(QWidget, 'newWidget').lineEdit.text()
+        projectPath = self.findChild(QWidget, 'saveWidget').lineEdit.text()
+        fullPath = os.path.join(projectPath, projectFolder)
+        classNumber = self.findChild(QWidget, 'classNumberWidget').classNumberSlider.value()
+
+        if projectFolder == '':
+            QMessageBox.warning(self, "警告", "请输入项目名", QMessageBox.Yes, QMessageBox.Yes)
+            return
+        if projectPath == '':
+            QMessageBox.warning(self, "警告", "请输入项目保存地址", QMessageBox.Yes, QMessageBox.Yes)
+            return
+        if os.path.exists(fullPath):
+            QMessageBox.warning(self, "警告", "此文件夹已存在", QMessageBox.Yes, QMessageBox.Yes)
+            return
+        else:
+            os.mkdir(fullPath)
+
+        if not os.path.exists(fullPath + '/data'):
+            os.mkdir(fullPath + '/data')
+
 
 
 '''
@@ -101,6 +126,15 @@ class ItemWidget(QWidget):
         self.iconLabel.setMaximumSize(20, 20)
         self.operationToolButton.setText("...")
         self.operationToolButton.setFixedSize(25, 25)
+        if self.is_open_file:
+            self.lineEdit.setReadOnly(True)
+        self.operationToolButton.clicked.connect(self.chooseProjectPath)
+
+    def chooseProjectPath(self):
+        directory = QFileDialog.getExistingDirectory(None, "选择训练任务保存路径", "./")
+        if directory == '':
+            return
+        self.lineEdit.setText(directory)
 
 
 '''
@@ -220,12 +254,23 @@ class ClassAddWidget(QWidget):
         text = str(self.classAddLineEdit.text()).strip()
         if text == '':
             return
+        if self.checkRepeat(text):
+            return
         self.classAddLineEdit.clear()
         item = QListWidgetItem(self.classListWidget)
         item.setSizeHint(QSize(200, 30))
         widget = ClassItemWidget(text, item, self.classListWidget)
         widget.itemDeleted.connect(self.doDeleteItem)
         self.classListWidget.setItemWidget(item, widget)
+
+
+    def checkRepeat(self, text):
+        for _ in range(self.classListWidget.count()):
+            if self.classListWidget.itemWidget(self.classListWidget.item(0)).classNameLabel.text() == text:
+                QMessageBox.warning(self, "警告", "已经有这个标签啦", QMessageBox.Yes, QMessageBox.Yes)
+                return True
+        return False
+
 
     def doClearItem(self):
         # 清空所有Item
