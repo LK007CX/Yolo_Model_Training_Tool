@@ -32,7 +32,7 @@ class Winform(QWidget):
 
         self.resize(1280, 720)
         #self.setFixedSize(QSize(1280, 720))
-        
+        self.setMinimumSize(QSize(1280, 720))
         # 左侧列表
         self.listWidget = QListWidget(self, objectName="listWidget")
 
@@ -129,7 +129,7 @@ class Winform(QWidget):
         self.stackedWidget.addWidget(taskSettingsWidget)
 
         taggingWidget = TaggingWidget()
-        taggingWidget.setContentsMargins(50, 50, 50, 50)
+        taggingWidget.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget.addWidget(taggingWidget)
 
         configWidget = ConfigWidget()

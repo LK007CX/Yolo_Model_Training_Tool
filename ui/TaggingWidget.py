@@ -22,8 +22,8 @@ class TaggingWidget(QWidget):
 
         self.imageLabel = QLabel()
 
-        self.imagePath = None
-        self.xmlPath = None
+        self.imagePath = ''
+        self.xmlPath = ''
 
         self.prevPushButton = QPushButton()
         self.nextPushButton = QPushButton()
@@ -95,9 +95,14 @@ class TaggingWidget(QWidget):
 
 
     def showDrawingImage(self):
+        if not os.path.exists(self.imagePath):
+            return
         image_path = os.path.join(self.imagePath, self.imageListWidget.currentItem().text())
+        if not os.path.exists(image_path):
+            return
         filename = os.path.splitext(image_path)[0] + '.xml'
-        print(filename)
+        if not os.path.exists(filename):
+            return
         xml_path = os.path.join(self.xmlPath, filename)
         image = cv2.imread(image_path)
         image = self.cvDrawBoxes(xml_path, image)
@@ -125,8 +130,10 @@ class TaggingWidget(QWidget):
             pt1 = (xmin, ymin)
             pt2 = (xmax, ymax)
             r, g, b = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
-            cv2.rectangle(img, pt1, pt2, (r, g, b), 2)
-            cv2.putText(img, detection[4], (pt1[0], pt1[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, [r, g, b], 2)
+            #cv2.rectangle(img, pt1, pt2, (r, g, b), 2)
+            cv2.rectangle(img, pt1, pt2, (0, 255, 0), 5)
+            #cv2.putText(img, detection[4], (pt1[0], pt1[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, [r, g, b], 2)
+            cv2.putText(img, detection[4], (pt1[0] + 10, pt1[1] + 60), cv2.FONT_HERSHEY_SIMPLEX, 2, [0, 255, 0], 5)
         return img
 
     def addImageToListWidget_test(self):
@@ -182,11 +189,11 @@ class TaggingWidget(QWidget):
 
     def resetImagePath(self):
         self.imageChooseWidget.lineEdit.setText('')
-        self.imagePath = None
+        self.imagePath = ''
 
     def resetXMLPath(self):
         self.xmlChooseWidget.lineEdit.setText('')
-        self.xmlPath = None
+        self.xmlPath = ''
 
 
 class FileChooseWidget(QWidget):
