@@ -12,8 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b25cc93f-bdf0-4f1c-ad4c-4f85395fd185" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/TaskSettingsWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/TaskSettingsWidget.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,30 +204,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="111" key="#main/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606368120842" />
-    <state width="1899" height="388" key="GridCell.Tab.0.bottom" timestamp="1606375646917">
+    <state width="1899" height="388" key="GridCell.Tab.0.bottom" timestamp="1607413387934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1605875647685" />
     <state width="1493" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606054998715" />
-    <state width="1899" height="388" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606375646917" />
-    <state width="1899" height="388" key="GridCell.Tab.0.center" timestamp="1606375646917">
+    <state width="1899" height="388" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607413387934" />
+    <state width="1899" height="388" key="GridCell.Tab.0.center" timestamp="1607413387934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1605875647684" />
     <state width="1493" height="265" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606054998715" />
-    <state width="1899" height="388" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606375646917" />
-    <state width="1899" height="388" key="GridCell.Tab.0.left" timestamp="1606375646917">
+    <state width="1899" height="388" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607413387934" />
+    <state width="1899" height="388" key="GridCell.Tab.0.left" timestamp="1607413387933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1605875647684" />
     <state width="1493" height="265" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606054998715" />
-    <state width="1899" height="388" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606375646917" />
-    <state width="1899" height="388" key="GridCell.Tab.0.right" timestamp="1606375646917">
+    <state width="1899" height="388" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607413387933" />
+    <state width="1899" height="388" key="GridCell.Tab.0.right" timestamp="1607413387934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1605875647684" />
     <state width="1493" height="265" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606054998715" />
-    <state width="1899" height="388" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606375646917" />
+    <state width="1899" height="388" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607413387934" />
     <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1606054998715">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
