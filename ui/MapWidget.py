@@ -9,9 +9,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 
-"""
-4.
-"""
 class MapWidget(QWidget):
     def __init__(self, *args, **kwargs):
         super(MapWidget, self).__init__(*args, **kwargs)
@@ -24,5 +21,3 @@ if __name__ == "__main__":
     win = MapWidget()
     win.show()
     sys.exit(app.exec_())
-
-
